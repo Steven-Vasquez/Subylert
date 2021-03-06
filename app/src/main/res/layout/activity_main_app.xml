@@ -8,18 +8,45 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/totalSubscriptions"
+        android:id="@+id/totalPrice"
 
         android:background="@drawable/gradient_total_subscriptions"
         android:textColor="#FFFFFF"
         android:textSize="50sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="140dp"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:padding="12dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
         />
+
+    <TextView
+        android:id="@+id/totalSubscriptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="for 50 subscriptions"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-50dp"
+        android:textSize="20sp"
+        android:layout_marginRight="30dp"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/per_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="per week"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-30dp"
+        android:gravity="right"
+        android:textSize="20sp"
+        android:layout_marginRight="30dp"
+        android:paddingRight="20dp"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/subscriptions"
@@ -27,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="@string/subscriptions"
         android:textColor="#000000"
         android:textSize="30sp"
@@ -39,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/add_subscription_texts"
         android:drawableLeft="@drawable/ic_add"

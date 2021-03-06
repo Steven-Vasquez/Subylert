@@ -3,6 +3,7 @@ package com.example.subscriptionmanager;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
@@ -21,9 +22,10 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 public class AddSubscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    final Calendar myCalendar = Calendar.getInstance();
-    EditText edittext;
-    String[] courses = { "Day(s)", "Week(s)", "Month(s)", "Year(s)" };
+    Calendar myCalendar = Calendar.getInstance();
+    private EditText edittext;
+    String[] courses = {"Day(s)", "Week(s)", "Month(s)", "Year(s)"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +50,7 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
     // Performing action when ItemSelected
     // from spinner, Overriding onItemSelected method
     @Override
-    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id)
-    {
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
         // make toast of name of course
         // which is selected in spinner
         Toast.makeText(getApplicationContext(),
@@ -59,28 +60,29 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> arg0)
-    {
+    public void onNothingSelected(AdapterView<?> arg0) {
         // Auto-generated method stub
     }
-    public void onSave(View v){
+
+    public void onSave(View v) {
         Intent intent = new Intent(this, MainAppActivity.class);
         this.startActivity(intent);
     }
 
 
     public void setUpDatePicker() {
-        EditText edittext = (EditText) findViewById(R.id.starting_date);
+        edittext = (EditText) findViewById(R.id.starting_date);
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
                                   int dayOfMonth) {
                 // TODO Auto-generated method stub
-                myCalendar.set(Calendar.YEAR, year);
+               /* myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                //updateLabel();
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);*/
+                myCalendar.set(year, monthOfYear, dayOfMonth);
+                updateLabel();
             }
 
         };
@@ -101,10 +103,15 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
-    /*private void updateLabel() {
-        String myFormat = "MM/DD/YYYY"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
-        edittext.setText(sdf.format(myCalendar.getTime()));
-    }*/
+    private void updateLabel() {
+        String myFormat = "MM/DD/YYYY"; //In which you need put here
+        String format1="MM";
+        String format2="0000";
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        Log.d("MainActivity", format1.format(Integer.toString(myCalendar.get(Calendar.MONTH)))+"/"+format1.format(Integer.toString(myCalendar.get(Calendar.DATE)))+"/"+format2.format(Integer.toString(myCalendar.get(Calendar.YEAR))));
+        //edittext.setText(sdf.format(myCalendar.getTime()));
+        edittext.setText(
+                format1.format(Integer.toString(myCalendar.get(Calendar.MONTH)+1))+"/"+format1.format(Integer.toString(myCalendar.get(Calendar.DATE)))+"/"+format2.format(Integer.toString(myCalendar.get(Calendar.YEAR))));
+    }
 }

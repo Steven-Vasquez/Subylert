@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:layout_alignBottom="@id/subscriptionName"
 
-        android:background="#0085FF" />
+        android:background="@drawable/gradient" />
 
     <EditText
         android:id="@+id/subscriptionName"
@@ -27,7 +27,7 @@
         android:layout_marginEnd="30dp"
         android:drawableStart="@drawable/ic_edit_40"
         android:gravity="bottom"
-        android:background="#0085FF"
+        android:background="#000085FF"
         android:hint=" Subscription Name"
         android:inputType="text"
         android:padding="20dp"
@@ -123,7 +123,6 @@
         android:background="@drawable/add_subscription_texts"
         android:clickable="true"
         android:drawableEnd="@drawable/ic_calendar"
-        android:editable="false"
         android:focusable="false"
 
         android:hint="MM/DD/YYYY"
