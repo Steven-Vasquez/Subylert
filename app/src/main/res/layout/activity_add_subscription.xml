@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/subscriptionName"
+
+        android:background="#0085FF" />
+
+    <EditText
+        android:id="@+id/subscriptionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:drawableStart="@drawable/ic_edit_40"
+        android:gravity="bottom"
+        android:background="#0085FF"
+        android:hint=" Subscription Name"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cost_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginTop="40dp"
+        android:text="Cost"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cost_label"
+        android:layout_alignEnd="@id/subscriptionName"
+        android:background="@drawable/add_subscription_texts"
+        android:ems="10"
+        android:hint="Enter cost ($0.00)"
+        android:textSize="20dp"
+        android:inputType="numberDecimal"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/every_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cost_label"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginTop="40dp"
+        android:text="Every"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+    <EditText
+        android:id="@+id/frequency"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/every_label"
+        android:layout_alignLeft="@id/every_label"
+        android:layout_marginLeft="100dp"
+        android:background="@drawable/add_subscription_texts"
+        android:textSize="20dp"
+        android:hint="1"
+        android:inputType="number"
+
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/spinner_label"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/subscriptionName"
+        android:layout_alignBottom="@id/every_label"
+        android:background="@drawable/add_subscription_texts"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_alignRight="@id/spinner_label"
+        android:layout_alignBottom="@id/every_label"
+        android:layout_marginBottom="0dp" />
+
+    <TextView
+        android:id="@+id/starting_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/every_label"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginTop="40dp"
+        android:text="Start date"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/starting_date"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textSize="18dp"
+        android:layout_alignBottom="@id/starting_date_label"
+        android:layout_alignRight="@id/subscriptionName"
+        android:background="@drawable/add_subscription_texts"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_calendar"
+        android:editable="false"
+        android:focusable="false"
+
+        android:hint="MM/DD/YYYY"
+        android:longClickable="false"
+        android:padding="15dp" />
+
+    <Button
+        android:id="@+id/save_add_subscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/subscriptionName"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/mybutton"
+        android:drawableLeft="@drawable/ic_check"
+        android:onClick="onSave"
+        android:text="@string/save" />
+
+
+
+</RelativeLayout>
