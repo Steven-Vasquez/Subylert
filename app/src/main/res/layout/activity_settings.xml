@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/subscriptionName"
+
+        android:background="@drawable/gradient" />
+
+    <TextView
+        android:id="@+id/subscriptionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="30dp"
+        android:background="#000085FF"
+        android:gravity="bottom"
+        android:hint="Settings"
+        android:padding="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/General_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginTop="24dp"
+        android:text="General"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginTop="79dp"
+        android:text="Currency"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/show_billing_dates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-102dp"
+        android:layout_marginTop="250dp"
+        android:text="Show Billing Dates"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/send_push_notifications"
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginTop="354dp"
+        android:text="Send Push Notifications"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/how_often"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginTop="436dp"
+        android:text="How Often?"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/total_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-101dp"
+        android:layout_marginTop="132dp"
+        android:text="Total Cost"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/subscriptions_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-101dp"
+        android:layout_marginTop="186dp"
+        android:text="Subscriptions"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/notifications_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-101dp"
+        android:layout_marginTop="308dp"
+        android:text="Notifications"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Account_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscriptionName"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-99dp"
+        android:layout_marginTop="489dp"
+        android:text="Account Settings"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/every_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cost_label"
+        android:layout_alignLeft="@id/subscriptionName"
+        android:layout_marginLeft="-63dp"
+        android:layout_marginTop="14dp"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/spinner_label"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/subscriptionName"
+        android:layout_alignBottom="@id/every_label"
+        android:layout_marginRight="-44dp"
+        android:layout_marginBottom="-149dp"
+        android:background="@drawable/add_subscription_texts"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_alignRight="@id/spinner_label"
+        android:layout_alignBottom="@id/every_label"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="-149dp" />
+
+    <Button
+        android:id="@+id/save_add_subscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/subscriptionName"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="-116dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/mybutton"
+        android:drawableLeft="@drawable/ic_check"
+        android:onClick="onSave"
+        android:text="@string/save"
+        android:textAllCaps="false" />
+
+
+</RelativeLayout>
