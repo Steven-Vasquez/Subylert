@@ -30,24 +30,18 @@
         android:textSize="40dp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android.layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continue with Google"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
         android:layout_marginBottom="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="onClick"
-        android:backgroundTint="@color/white"
-        android:background="@drawable/mybutton"
-        android:drawableLeft="@drawable/ic_logo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="144dp" />
 
 
-
-        />
 
     <TextView
         android:id="@+id/description"
@@ -60,5 +54,9 @@
         android:textSize="20dp"
         android:textColor="@color/white"
         android:text="Description \n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam orci ultrices a adipiscing purus diam ipsum mattis." />
+
+
+
+
 
 </RelativeLayout>
