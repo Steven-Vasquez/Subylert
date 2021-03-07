@@ -5,144 +5,359 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-
-    <TextView
-        android:id="@+id/textView6"
+    <ScrollView
+        android:id="@+id/subFormContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignBottom="@id/subscriptionName"
+        android:layout_above="@+id/save_add_subscription"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/subNameInputBanner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient">
 
-        android:background="#0085FF" />
+                <LinearLayout
+                    android:id="@+id/nameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/subscriptionName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="30dp"
-        android:drawableStart="@drawable/ic_edit_40"
-        android:gravity="bottom"
-        android:background="#0085FF"
-        android:hint=" Subscription Name"
-        android:inputType="text"
-        android:padding="20dp"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/username_icon"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_edit_40" />
 
-    <TextView
-        android:id="@+id/cost_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/subscriptionName"
-        android:layout_alignLeft="@id/subscriptionName"
-        android:layout_marginTop="40dp"
-        android:text="Cost"
-        android:textColor="#000000"
-        android:textSize="25dp" />
+                    <EditText
+                        android:id="@+id/subscriptionName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="#000085FF"
+                        android:gravity="bottom"
+                        android:hint=" Subscription Name"
+                        android:inputType="text"
+                        android:textColor="#FFFFFF"
+                        android:textSize="28dp"
+                        android:textStyle="bold"></EditText>
+                </LinearLayout>
+            </LinearLayout>
 
-    <EditText
-        android:id="@+id/cost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/cost_label"
-        android:layout_alignEnd="@id/subscriptionName"
-        android:background="@drawable/add_subscription_texts"
-        android:ems="10"
-        android:hint="Enter cost ($0.00)"
-        android:textSize="20dp"
-        android:inputType="numberDecimal"
-        android:padding="10dp" />
+            <LinearLayout
+                android:id="@+id/subFieldContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_below="@id/subNameInputBanner">
 
-    <TextView
-        android:id="@+id/every_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cost_label"
-        android:layout_alignLeft="@id/subscriptionName"
-        android:layout_marginTop="40dp"
-        android:text="Every"
-        android:textColor="#000000"
-        android:textSize="25dp" />
-    <EditText
-        android:id="@+id/frequency"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/every_label"
-        android:layout_alignLeft="@id/every_label"
-        android:layout_marginLeft="100dp"
-        android:background="@drawable/add_subscription_texts"
-        android:textSize="20dp"
-        android:hint="1"
-        android:inputType="number"
+                <LinearLayout
+                    android:id="@+id/costContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="24dp"
+                    android:orientation="horizontal">
 
-        android:padding="10dp" />
+                    <TextView
+                        android:id="@+id/cost_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp"
+                        android:text="cost"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
 
-    <TextView
-        android:id="@+id/spinner_label"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@id/subscriptionName"
-        android:layout_alignBottom="@id/every_label"
-        android:background="@drawable/add_subscription_texts"
-        android:padding="10dp"
-        android:textColor="#000000"
-        android:textSize="20dp" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cost"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="$0.00"
+                        app:boxStrokeWidth="2dp"
+                        app:shapeAppearance="@style/ShapeAppearanceOverlay.MyApp.MaterialView.RoundedOutline"
+                        >
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="47dp"
-        android:layout_alignRight="@id/spinner_label"
-        android:layout_alignBottom="@id/every_label"
-        android:layout_marginBottom="0dp" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
-    <TextView
-        android:id="@+id/starting_date_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/every_label"
-        android:layout_alignLeft="@id/subscriptionName"
-        android:layout_marginTop="40dp"
-        android:text="Start date"
-        android:textColor="#000000"
-        android:textSize="25dp" />
+                <LinearLayout
+                    android:id="@+id/everyContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/costContainer"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="24dp"
+                    android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/starting_date"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:textSize="18dp"
-        android:layout_alignBottom="@id/starting_date_label"
-        android:layout_alignRight="@id/subscriptionName"
-        android:background="@drawable/add_subscription_texts"
-        android:clickable="true"
-        android:drawableEnd="@drawable/ic_calendar"
-        android:editable="false"
-        android:focusable="false"
+                    <TextView
+                        android:id="@+id/every_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp"
+                        android:text="every"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
 
-        android:hint="MM/DD/YYYY"
-        android:longClickable="false"
-        android:padding="15dp" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/frequency"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        app:boxStrokeWidth="2dp"
+                        app:shapeAppearance="@style/ShapeAppearanceOverlay.MyApp.MaterialView.RoundedOutline">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/periodMenu"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:boxStrokeWidth="2dp"
+                                app:shapeAppearance="@style/ShapeAppearanceOverlay.MyApp.MaterialView.RoundedOutline"
+                                >
+
+                                <AutoCompleteTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="none"
+                                    />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+<!--                            <com.google.android.material.textfield.TextInputLayout-->
+<!--                            android:id="@+id/spinner_label"-->
+<!--                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            app:boxStrokeWidth="2dp"-->
+<!--                            app:shapeAppearance="@style/ShapeAppearanceOverlay.MyApp.MaterialView.RoundedOutline">-->
+
+<!--                                <com.google.android.material.textfield.TextInputEditText-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content" />-->
+
+<!--                            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                            <Spinner-->
+<!--                                android:id="@+id/spinner"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="50dp"-->
+<!--                                android:layout_alignRight="@id/spinner_label"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginBottom="0dp" />-->
+                        </RelativeLayout>
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/spinner_label"-->
+                        <!--                        android:layout_width="141dp"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:background="@drawable/add_subscription_texts"-->
+                        <!--                        android:padding="10dp"-->
+                        <!--                        android:textColor="#000000"-->
+                        <!--                        android:textSize="20dp"-->
+                        <!--                        />-->
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/startingContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/everyContainer"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="24dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/starting_date_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/every_label"
+                        android:layout_alignLeft="@id/subscriptionName"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp"
+                        android:text="start date"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <!--                <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                    android:id="@+id/starting_date"-->
+                    <!--                    android:layout_width="match_parent"-->
+                    <!--                    android:layout_height="50dp"-->
+                    <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                    <!--                    app:shapeAppearance="@style/ShapeAppearanceOverlay.MyApp.MaterialView.RoundedOutline"-->
+                    <!--                    app:boxStrokeWidth="2dp"-->
+                    <!--                    >-->
+                    <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        />-->
+                    <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <EditText
+                        android:id="@+id/starting_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignRight="@id/subscriptionName"
+                        android:layout_alignBottom="@id/starting_date_label"
+                        android:background="@drawable/add_subscription_texts"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_calendar"
+                        android:focusable="false"
+                        android:hint="MM/DD/YYYY"
+                        android:longClickable="false"
+                        android:padding="15dp"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/save_add_subscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/subscriptionName"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textAllCaps="false"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/mybutton"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
         android:drawableLeft="@drawable/ic_check"
+        android:gravity="right"
+        android:letterSpacing="0"
         android:onClick="onSave"
-        android:text="@string/save" />
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/theme_blue"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.MaterialView.RoundedOutline" />
+
+
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/cost"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignBottom="@id/cost_label"-->
+<!--        android:layout_alignEnd="@id/subscriptionName"-->
+<!--        android:background="@drawable/add_subscription_texts"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Enter cost ($0.00)"-->
+<!--        android:textSize="20dp"-->
+<!--        android:inputType="numberDecimal"-->
+<!--        android:padding="10dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/every_label"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/cost_label"-->
+<!--        android:layout_alignLeft="@id/subscriptionName"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:text="Every"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="25dp" />-->
+<!--    <EditText-->
+<!--        android:id="@+id/frequency"-->
+<!--        android:layout_width="65dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignBottom="@id/every_label"-->
+<!--        android:layout_alignLeft="@id/every_label"-->
+<!--        android:layout_marginLeft="100dp"-->
+<!--        android:background="@drawable/add_subscription_texts"-->
+<!--        android:textSize="20dp"-->
+<!--        android:hint="1"-->
+<!--        android:inputType="number"-->
+
+<!--        android:padding="10dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/spinner_label"-->
+<!--        android:layout_width="141dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignRight="@id/subscriptionName"-->
+<!--        android:layout_alignBottom="@id/every_label"-->
+<!--        android:background="@drawable/add_subscription_texts"-->
+<!--        android:padding="10dp"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="20dp" />-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="47dp"-->
+<!--        android:layout_alignRight="@id/spinner_label"-->
+<!--        android:layout_alignBottom="@id/every_label"-->
+<!--        android:layout_marginBottom="0dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/starting_date_label"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/every_label"-->
+<!--        android:layout_alignLeft="@id/subscriptionName"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:text="Start date"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="25dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/starting_date"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:textSize="18dp"-->
+<!--        android:layout_alignBottom="@id/starting_date_label"-->
+<!--        android:layout_alignRight="@id/subscriptionName"-->
+<!--        android:background="@drawable/add_subscription_texts"-->
+<!--        android:clickable="true"-->
+<!--        android:drawableEnd="@drawable/ic_calendar"-->
+<!--        android:focusable="false"-->
+
+<!--        android:hint="MM/DD/YYYY"-->
+<!--        android:longClickable="false"-->
+<!--        android:padding="15dp" />-->
+
 
 
 

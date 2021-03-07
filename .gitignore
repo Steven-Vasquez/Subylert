@@ -1,9 +1,4 @@
-.idea/
-gradle.properties
-gradle/
-gradlew
-gradlew.bat
-settings.gradle
+
 
 # Built application files
 *.apk
