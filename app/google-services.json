@@ -7,12 +7,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:295559430955:android:ac5d57aa44f3266af5bb6e",
+        "mobilesdk_app_id": "1:295559430955:android:96358fcd0b192803f5bb6e",
         "android_client_info": {
           "package_name": "com.example.subscriptionmanager"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "295559430955-ved53svvdr3rnq4l5g7tkan54kqpmnao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.subscriptionmanager",
+            "certificate_hash": "2b97aac1b5722b3b00a3d660fa8f73140fe74ae4"
+          }
+        },
         {
           "client_id": "295559430955-7g67kcokqh6fimq8o2nbjfev9uo5l6nu.apps.googleusercontent.com",
           "client_type": 3
