@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/dateActionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="287dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/price_view"
+                android:layout_width="259dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/bt_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/ic_delete" />
+
+                <Button
+                    android:id="@+id/bt_edit"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    app:strokeColor="#00000000"
+                    app:strokeWidth="2dp"
+                    android:textColor="#000000"
+                    android:drawableLeft="@drawable/ic_edit"
+                    android:letterSpacing="0"
+                    android:text="@string/edit"
+                    android:layout_marginLeft="20dp"
+                    />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/namePriceContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/frequency_view"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="0dp"
+
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/frequency_type_view"
+                android:layout_width="145dp"
+                android:layout_height="45dp"
+                android:layout_alignLeft="@id/frequency_view"
+                android:layout_marginLeft="50dp"
+                android:layout_weight="1"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/start_date_view"
+                android:layout_width="152dp"
+                android:layout_height="45dp"
+                android:layout_alignLeft="@id/frequency_type_view"
+                android:layout_marginLeft="145dp"
+                android:layout_weight="1"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
