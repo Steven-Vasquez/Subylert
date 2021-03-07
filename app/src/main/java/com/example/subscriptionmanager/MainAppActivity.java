@@ -16,6 +16,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,10 +27,32 @@ public class MainAppActivity extends AppCompatActivity {
     DecimalFormat money = new DecimalFormat("$0.00");
     private int totalPrice=400;
     private int totalSubscriptions=50;
+    RecyclerView recyclerView;
+
+    List<MainData> dataList = new ArrayList<>();
+    LinearLayoutManager linearLayoutManager;
+    RoomDB database;
+    MainAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_app);
+        recyclerView = findViewById(R.id.recycler_view);
+
+        //Initialize database
+        database = RoomDB.getInstance(this);
+        //Store database value in data list
+        dataList = database.mainDao().getAll();
+
+        //Initialize linear layout manager
+        linearLayoutManager = new LinearLayoutManager(this);
+        //Set layout manager
+        recyclerView.setLayoutManager(linearLayoutManager);
+        //Initialize adapter
+        adapter = new MainAdapter(com.example.subscriptionmanager.MainAppActivity.this,dataList);
+        //Set adapter
+        recyclerView.setAdapter(adapter);
         findViewById(R.id.signOutButton).setOnClickListener(new View.OnClickListener() {
 
             @Override

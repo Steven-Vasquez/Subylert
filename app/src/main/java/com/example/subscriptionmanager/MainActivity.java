@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         // Check for existing Google Sign In account, if the user is already signed in
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        Log.d("MainActivity", "this part runs");
         updateUI(account);
     }
 
@@ -98,18 +97,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void updateUI(GoogleSignInAccount account){
-        Log.d("MainActivity", "this part runs2");
         if(account!=null){
-            Log.d("MainActivity", "this part runs3");
-            Intent intent = new Intent(MainActivity.this, MainAppActivity.class);
-            MainActivity.this.startActivity(intent);
-            /*String personName = account.getDisplayName();
+            String personName = account.getDisplayName();
             String personEmail = account.getEmail();
             String personId = account.getId();
-            String personGivenName = account.getGivenName();
-            String personFamilyName = account.getFamilyName();
+            //String personGivenName = account.getGivenName();
+            //String personFamilyName = account.getFamilyName();
             //Uri personPhoto = account.getPhotoUrl();
-            Log.d("MainActivity",personId+" | " +personName + " | " + personEmail + " | " + personGivenName + " | " + personFamilyName);*/
+            //Log.d("MainActivity",personId+" | " +personName + " | " + personEmail + " | " + personGivenName + " | " + personFamilyName);
+            //108302863042310295898 | Adam Shafi | adam0shafi@gmail.com | Adam | Shafi
+            Intent intent = new Intent(MainActivity.this, MainAppActivity.class);
+            MainActivity.this.startActivity(intent);
         }
     }
 }
