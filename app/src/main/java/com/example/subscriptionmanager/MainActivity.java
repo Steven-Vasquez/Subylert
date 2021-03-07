@@ -117,4 +117,13 @@ public class MainActivity extends AppCompatActivity {
             Log.d("MainActivity",personId+" | " +personName + " | " + personEmail + " | " + personGivenName + " | " + personFamilyName);*/
         }
     }
+
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.loginOld:
+                Intent intent = new Intent(MainActivity.this, MainAppActivity.class);
+                MainActivity.this.startActivity(intent);
+                break;
+        }
+    }
 }
