@@ -4,6 +4,7 @@
     <string name="subscriptions">Subscriptions</string>
     <string name="add_new_subscription">Add new subscription</string>
     <string name="save">Save</string>
-
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 
 </resources>
