@@ -107,7 +107,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                     public void onClick(View v) {
                         //Dismiss dialog
                         dialog.dismiss();
-                        
+
                         //Get updated text from edit text
                         String uText = editText.getText().toString().trim();
                         double uPrice = Double.parseDouble(editPrice.getText().toString().trim());
