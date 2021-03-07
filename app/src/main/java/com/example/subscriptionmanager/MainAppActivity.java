@@ -35,7 +35,12 @@ public class MainAppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_app);
         recyclerView = findViewById(R.id.recycler_view);
-
+        try
+        {
+            this.getSupportActionBar().hide();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         //Initialize database
         database = RoomDB.getInstance(this);
         //Store database value in data list
@@ -49,30 +54,43 @@ public class MainAppActivity extends AppCompatActivity {
         adapter = new MainAdapter(com.example.subscriptionmanager.MainAppActivity.this,dataList);
         //Set adapter
         recyclerView.setAdapter(adapter);
-        findViewById(R.id.signOutButton).setOnClickListener(new View.OnClickListener() {
 
+        findViewById(R.id.settings).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case R.id.signOutButton:
-                        signOut();
+                    case R.id.settings:
+                        Intent intent = new Intent(MainAppActivity.this, SettingsActivity.class);
+                        MainAppActivity.this.startActivity(intent);
                         break;
                 }
             }
         });
+//        findViewById(R.id.signOutButton).setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                switch (v.getId()) {
+//                    case R.id.signOutButton:
+//                        signOut();
+//                        break;
+//                }
+//            }
+//        });
     }
-    private void signOut() {
+//    private void signOut() {
+//
+//        MainActivity.mGoogleSignInClient.signOut()
+//                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        closeSubscription();
+//                        //revokeAccess();
+//
+//                    }
+//                });
+//    }
 
-        MainActivity.mGoogleSignInClient.signOut()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        closeSubscription();
-                        //revokeAccess();
-
-                    }
-                });
-    }
 
     //Later, come back and follow these instructions at bottom of page to remove google account info from app
     //https://developers.google.com/identity/sign-in/android/disconnect
@@ -119,9 +137,9 @@ public class MainAppActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddSubscriptionActivity.class);
         this.startActivity(intent);
     }
-    public void closeSubscription() {
-        Intent intent = new Intent(this, MainActivity.class);
-        this.finish();
-        this.startActivity(intent);
-    }
+//    public void closeSubscription() {
+//        Intent intent = new Intent(this, MainActivity.class);
+//        this.finish();
+//        this.startActivity(intent);
+//    }
 }

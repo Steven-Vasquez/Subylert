@@ -116,12 +116,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.loginOld:
-//                Intent intent = new Intent(MainActivity.this, MainAppActivity.class);
-//                MainActivity.this.startActivity(intent);
-//                break;
-//        }
-//    }
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.loginOld:
+                Intent intent = new Intent(MainActivity.this, MainAppActivity.class);
+                MainActivity.this.startActivity(intent);
+                break;
+        }
+    }
 }
