@@ -142,7 +142,7 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
             int sFrequency = Integer.parseInt(subFrequency.getText().toString().trim());
             String sFrequencyType = spin.getSelectedItem().toString();
             Date sStartDate = myCalendar.getTime();
-
+            NotivizeManager notivizeManager= new NotivizeManager(sFrequency, sFrequencyType,sName, sPrice);
             //Check condition
 
             //When text is not empty

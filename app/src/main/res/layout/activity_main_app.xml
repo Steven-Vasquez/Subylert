@@ -12,22 +12,22 @@
         android:id="@+id/signOutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="280dp"
+        app:backgroundTint="@color/theme_blue"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.MaterialView.RoundedOutline"
         android:text="Sign Out" />
 
 
-    <Button
-        android:id="@+id/settingsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
+<!--    <Button-->
+<!--        android:id="@+id/settingsButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_centerHorizontal="true"-->
 
-        android:text="Settings"/>
+<!--        android:text="Settings"/>-->
 
 
     <RelativeLayout

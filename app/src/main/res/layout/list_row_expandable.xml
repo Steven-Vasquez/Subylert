@@ -71,10 +71,10 @@
 
             <TextView
                 android:id="@+id/frequency_view"
-                android:layout_width="50dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
+                android:layout_width="22dp"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="0dp"
+                android:layout_weight="1"
 
                 android:textSize="14sp" />
 
@@ -83,7 +83,9 @@
                 android:layout_width="145dp"
                 android:layout_height="45dp"
                 android:layout_alignLeft="@id/frequency_view"
-                android:layout_marginLeft="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="0dp"
                 android:layout_weight="1"
                 android:textSize="14sp" />
 

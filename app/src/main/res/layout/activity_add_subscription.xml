@@ -5,6 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MenuTest.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/Theme.MenuTest.PopupOverlay"
+            android:background="@drawable/gradient"
+            >
+            <TextView
+                android:id="@+id/addSubName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="24dp"
+                android:textStyle="bold"
+                android:text="Add Subscription"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <ScrollView
         android:id="@+id/subFormContainer"
         android:layout_width="match_parent"
@@ -26,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="90dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
                     android:orientation="horizontal">

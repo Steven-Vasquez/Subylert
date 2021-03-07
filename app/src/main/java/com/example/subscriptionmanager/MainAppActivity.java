@@ -21,8 +21,8 @@ import com.google.android.gms.tasks.Task;
 
 public class MainAppActivity extends AppCompatActivity {
     DecimalFormat money = new DecimalFormat("$0.00");
-    private int totalPrice=400;
-    private int totalSubscriptions=50;
+    private double totalPrice=0;
+    private int totalSubscriptions=0;
     RecyclerView recyclerView;
 
     List<MainData> dataList = new ArrayList<>();
@@ -88,6 +88,25 @@ public class MainAppActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        setTotals();
+    }
+    public void setTotals(){
+        totalPrice = 0;
+        totalSubscriptions = 0;
+        database = RoomDB.getInstance(this);
+        if(database!=null) {
+
+            dataList = database.mainDao().getAll();
+            for (int i = 0; i < dataList.size(); i++) {
+                totalSubscriptions++;
+                totalPrice += dataList.get(i).getPrice();
+            }
+        }
         updateViews();
     }
     public void updateViews(){

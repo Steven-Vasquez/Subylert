@@ -119,6 +119,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                         dataList.clear();
                         dataList.addAll(database.mainDao().getAll());
                         notifyDataSetChanged();
+
                     }
                 });
             }
@@ -138,6 +139,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 dataList.remove(position);
                 notifyItemRemoved(position);
                 notifyItemRangeChanged(position, dataList.size());
+
             }
         });
     }
