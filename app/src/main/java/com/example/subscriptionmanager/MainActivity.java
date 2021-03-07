@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
         setContentView(R.layout.activity_main);
         //setContentView(R.layout.activity_main_app);
         // Configure sign-in to request the user's ID, email address, and basic
@@ -108,6 +113,15 @@ public class MainActivity extends AppCompatActivity {
             //108302863042310295898 | Adam Shafi | adam0shafi@gmail.com | Adam | Shafi
             Intent intent = new Intent(MainActivity.this, MainAppActivity.class);
             MainActivity.this.startActivity(intent);
+        }
+    }
+
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.loginOld:
+                Intent intent = new Intent(MainActivity.this, MainAppActivity.class);
+                MainActivity.this.startActivity(intent);
+                break;
         }
     }
 }
