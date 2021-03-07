@@ -23,6 +23,10 @@
         <activity android:name=".AddSubscriptionActivity">
 
         </activity>
+
+        <activity android:name=".SettingsActivity">
+
+        </activity>
     </application>
 
 </manifest>

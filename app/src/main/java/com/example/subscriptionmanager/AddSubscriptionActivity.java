@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -63,6 +64,11 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_subscription);
         setUpDatePicker();
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
 // Take the instance of Spinner and
         // apply OnItemSelectedListener on it which
         // tells which item of spinner is clicked
@@ -70,13 +76,17 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
         spin.setOnItemSelectedListener(this);
         // Create the instance of ArrayAdapter
         // having the list of courses
-        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_spinner_item, courses);
+        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, courses);
         // set simple layout resource file
         // for each item of spinner
-//        ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Set the ArrayAdapter (ad) data on the
         // Spinner which binds data to spinner
         spin.setAdapter(ad);
+
+//        AutoCompleteTextView textView = (AutoCompleteTextView)
+//                findViewById(R.id.periodMenuText);
+//        textView.setAdapter(ad);
 
         subName = findViewById(R.id.subscriptionName);
         subPrice = findViewById(R.id.cost);
