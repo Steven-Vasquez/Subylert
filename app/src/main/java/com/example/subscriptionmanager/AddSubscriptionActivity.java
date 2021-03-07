@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
@@ -21,6 +22,12 @@ import android.widget.Spinner;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+
 public class AddSubscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Calendar myCalendar = Calendar.getInstance();
     private EditText edittext;
@@ -28,6 +35,7 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_subscription);
         setUpDatePicker();
@@ -45,6 +53,8 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
         // Set the ArrayAdapter (ad) data on the
         // Spinner which binds data to spinner
         spin.setAdapter(ad);
+
+
     }
 
     // Performing action when ItemSelected
@@ -114,4 +124,5 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
         edittext.setText(
                 format1.format(Integer.toString(myCalendar.get(Calendar.MONTH)+1))+"/"+format1.format(Integer.toString(myCalendar.get(Calendar.DATE)))+"/"+format2.format(Integer.toString(myCalendar.get(Calendar.YEAR))));
     }
+
 }
