@@ -61,9 +61,10 @@ public class MainData implements Serializable {
     public void setStartYear(int startYear) {this.startMonth=startYear;}
 
     public void setDate(Date startDate) {
-        startMonth = startDate.getMonth();
+        startMonth = startDate.getYear();
+        startYear = startDate.getMonth()+1;
         this.startDate = startDate.getDate();
-        startYear = startDate.getYear();
+
     }
 
     public String getFrequencyType() { return frequencyType; }

@@ -1,12 +1,9 @@
 package com.example.subscriptionmanager;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 
-import android.text.Html;
 import android.view.View;
-import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import androidx.recyclerview.widget.LinearLayoutManager;

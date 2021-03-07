@@ -4,6 +4,9 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -43,8 +46,12 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
     EditText subFrequency;
     EditText subCalendar;
     Button btSave;
+    private int startMonth;
+    private int startDate;
+    private int startYear;
 
-
+    private String format1="MM";
+    private String format2="0000";
 
 
     List<MainData> dataList = new ArrayList<>();
@@ -66,7 +73,7 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
         ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_spinner_item, courses);
         // set simple layout resource file
         // for each item of spinner
-        ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Set the ArrayAdapter (ad) data on the
         // Spinner which binds data to spinner
         spin.setAdapter(ad);
@@ -87,6 +94,28 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
 
 
     }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.period_menu, menu);
+//        return true;
+//    }
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle item selection
+//        switch (item.getItemId()) {
+//            case R.id.periodMenu:
+//                newGame();
+//                return true;
+//            case R.id.help:
+//                showHelp();
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
     // Performing action when ItemSelected
     // from spinner, Overriding onItemSelected method
@@ -116,26 +145,30 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
 
             //Check condition
 
-                //When text is not empty
-                //Initialize main data
-                MainData data = new MainData();
-                //Set text on main data
-                data.setText(sName);
-                data.setPrice(sPrice);
-                data.setFrequency(sFrequency);
-                data.setFrequencyType(sFrequencyType);
-                data.setDate(sStartDate);
+            //When text is not empty
+            //Initialize main data
+            MainData data = new MainData();
+            //Set text on main data
+            data.setText(sName);
+            data.setPrice(sPrice);
+            data.setFrequency(sFrequency);
+            data.setFrequencyType(sFrequencyType);
+            data.setDate(sStartDate);
+//                data.setStartMonth(startMonth);
+//                data.setStartDate(startDate);
+//                data.setStartYear(startYear);
+            Log.d("AddSubscriptionActivity","month:" + (data.getStartMonth())+" date: " + data.getStartDate()+ " year: "+data.getStartYear());
 
-                //Insert text in database
-                database.mainDao().insert(data);
-                //clear edit text
-                subName.setText("");
-                subPrice.setText("");
-                subFrequency.setText("");
+            //Insert text in database
+            database.mainDao().insert(data);
+            //clear edit text
+            subName.setText("");
+            subPrice.setText("");
+            subFrequency.setText("");
 
-                //Notify when data is inserted
-                dataList.clear();
-                dataList.addAll(database.mainDao().getAll());
+            //Notify when data is inserted
+            dataList.clear();
+            dataList.addAll(database.mainDao().getAll());
 
 
 
@@ -153,10 +186,13 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
             public void onDateSet(DatePicker view, int year, int monthOfYear,
                                   int dayOfMonth) {
                 // TODO Auto-generated method stub
-               /* myCalendar.set(Calendar.YEAR, year);
+//                startMonth = monthOfYear+1;
+//                startDate = dayOfMonth;
+//                startYear = year;
+                myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);*/
-                myCalendar.set(year, monthOfYear, dayOfMonth);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                //myCalendar.set(year, monthOfYear, dayOfMonth);
                 updateLabel();
             }
 
@@ -181,13 +217,15 @@ public class AddSubscriptionActivity extends AppCompatActivity implements Adapte
 
     private void updateLabel() {
         String myFormat = "MM/DD/YYYY"; //In which you need put here
-        String format1="MM";
-        String format2="0000";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        Log.d("MainActivity", format1.format(Integer.toString(myCalendar.get(Calendar.MONTH)))+"/"+format1.format(Integer.toString(myCalendar.get(Calendar.DATE)))+"/"+format2.format(Integer.toString(myCalendar.get(Calendar.YEAR))));
+        String test = format1.format(Integer.toString(myCalendar.get(Calendar.MONTH)+1))+"/"
+                +format1.format(Integer.toString(myCalendar.get(Calendar.DATE)))+"/"
+                +format2.format(Integer.toString(myCalendar.get(Calendar.YEAR)));
+        Log.d("MainActivity", test);
         //edittext.setText(sdf.format(myCalendar.getTime()));
+
         edittext.setText(
-                format1.format(Integer.toString(myCalendar.get(Calendar.MONTH)+1))+"/"+format1.format(Integer.toString(myCalendar.get(Calendar.DATE)))+"/"+format2.format(Integer.toString(myCalendar.get(Calendar.YEAR))));
+                test);
     }
 
 }

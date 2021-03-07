@@ -2,6 +2,7 @@ package com.example.subscriptionmanager;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
@@ -21,7 +23,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private List<com.example.subscriptionmanager.MainData> dataList;
     private Activity context;
     private RoomDB database;
-
+    private final DecimalFormat money = new DecimalFormat("$0.00");
     //Create constructor
     public MainAdapter(Activity context, List<com.example.subscriptionmanager.MainData> dataList) {
         this.context = context;
@@ -55,8 +57,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         //Set text on text view
         //error
         holder.textView.setText(data.getText());
-        holder.priceView.setText(Double.toString(data.getPrice()));
+        holder.priceView.setText(money.format(data.getPrice()));
         holder.frequencyView.setText(Integer.toString(data.getFrequency()));
+        holder.frequencyTypeView.setText(data.getFrequencyType());
+        holder.startDateView.setText("start date: " +data.getStartMonth()+"/"+data.getStartDate()+"/"+"2021");
+        Log.d("MainAdapter","start date: " +data.getStartMonth()+"/"+data.getStartDate()+"/"+data.getStartYear());
 
         holder.btEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,8 +152,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         TextView textView;
         TextView priceView;
         TextView frequencyView;
+        TextView frequencyTypeView;
+        TextView startDateView;
 
-        ImageView btEdit, btDelete;
+        ImageView btDelete;
+        Button btEdit;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -156,6 +164,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             textView = itemView.findViewById(R.id.text_view);
             priceView = itemView.findViewById(R.id.price_view);
             frequencyView = itemView.findViewById(R.id.frequency_view);
+            frequencyTypeView = itemView.findViewById(R.id.frequency_type_view);
+            startDateView = itemView.findViewById(R.id.start_date_view);
 
             btEdit = itemView.findViewById(R.id.bt_edit);
             btDelete = itemView.findViewById(R.id.bt_delete);
